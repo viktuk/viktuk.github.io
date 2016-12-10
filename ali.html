@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Сократитель</title>
+</head>
+<body>
+<table>
+<tr>
+<h2>Сократитель ссылок для <a href="https://vk.com/deshevi_ali"> Дешёвый Aliexpress</a></h2>
+</tr>
+<tr>
+<td>
+<form>
+<input type="text" id="url"  autofocus="" placeholder="Ссылка на товар" oninput="readyurl();">
+</form>
+</td>    
+<td>
+<form method="post" action="http://save.ali.pub/get-url.php">
+<input type="hidden" id="result" name="url">
+<input type="submit" value="Сократить">
+</form>
+</td>
+</tr>
+</table>
+<script>
+function readyurl(){
+var url = document.getElementById("url").value;                   
+if(url.indexOf('https://ru.aliexpress.com/item/') + 1) {
+var url = "http://alipromo.com/redirect/cpa/o/ob4dx0b1rtifseepw3xox3cjtaaxmol4/?sub=viktuk&to=" + encodeURIComponent(url.substr(0,url.indexOf("html")+4));
+document.getElementById("result").value= url;
+}
+}
+</script>
+</body>
+</html>
